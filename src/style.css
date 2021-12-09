@@ -122,3 +122,9 @@ a:hover {
   top: -20px;
   left: -15px;
 }
+.footer-link {
+  color: #cc99f9;
+}
+.footer-link:hover {
+  color: #ffabe1;
+}
