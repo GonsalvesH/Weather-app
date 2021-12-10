@@ -37,30 +37,35 @@ todaysdate.innerHTML = formatDate();
 
 //search engine
 function displayWeather(response) {
-  console.log(response.data);
-  document.querySelector("#city").innerHTML = response.data.name;
-  document.querySelector("#current-temp").innerHTML = Math.round(
-    response.data.main.temp
-  );
-  document.querySelector("#description").innerHTML =
-    response.data.weather[0].description;
-  document.querySelector("#humidity").innerHTML = response.data.main.humidity;
-  document.querySelector("#wind").innerHTML = Math.round(
-    response.data.wind.speed
-  );
+  let temperatureElement = document.querySelector("#current-temp");
+  let cityElement = document.querySelector("#city");
+  let descriptionElement = document.querySelector("#description");
+  let humidityElement = document.querySelector("#humidity");
+  let windElement = document.querySelector("#wind");
+
+  celsiusTemperature = response.data.main.temp;
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+  cityElement.innerHTML = response.data.name;
+  descriptionElement.innerHTML = response.data.weather[0].description;
+  humidityElement.innerHTML = response.data.main.humidity;
+  windElement.innerHTML = Math.round(response.data.wind.speed);
 }
 
-function searchCity(event) {
-  event.preventDefault();
+function searchCity(city) {
   let apiKey = "5a47f48f2314b1a01e3b9a0e67d393eb";
-  let city = document.querySelector("#search-city").value;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-
   axios.get(apiUrl).then(displayWeather);
 }
-let searchEngine = document.querySelector("#search-engine");
-searchEngine.addEventListener("submit", searchCity);
 
+function handlesubmit(event) {
+  event.preventDefault();
+  let cityInputElement = document.querySelector("#search-city");
+  searchCity(cityInputElement.value);
+}
+
+let searchEngine = document.querySelector("#search-engine");
+searchEngine.addEventListener("submit", handlesubmit);
+searchCity("New York");
 // celsius/fahrenheit conversion
 function convertToFahrenheit(event) {
   event.preventDefault();
@@ -94,6 +99,5 @@ function showCurrentLocation(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(searchLocation);
 }
-
 let locationButton = document.querySelector("#location-button");
 locationButton.addEventListener("click", showCurrentLocation);
