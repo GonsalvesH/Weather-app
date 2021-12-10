@@ -78,12 +78,6 @@ function convertToFahrenheit(event) {
   currentTemp.innerHTML = Math.round((celsiusTemperature * 9) / 5 + 32);
 }
 
-//function convertToCelsius(event) {
-//  event.preventDefault();
-// let currentTemp = document.querySelector("#current-temp");
-//let temperature = currentTemp.innerHTML;
-// currentTemp.innerHTML = Math.round((temperature - 32) / 1.8);
-//}
 function convertToCelsius(event) {
   event.preventDefault();
   let currentTemp = document.querySelector("#current-temp");
