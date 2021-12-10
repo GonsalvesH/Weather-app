@@ -49,6 +49,8 @@ function displayWeather(response) {
   descriptionElement.innerHTML = response.data.weather[0].description;
   humidityElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);
+  let icon = response.data.weather[0].icon;
+  todaysIcon(icon);
 }
 
 function searchCity(city) {
@@ -101,3 +103,33 @@ function showCurrentLocation(event) {
 }
 let locationButton = document.querySelector("#location-button");
 locationButton.addEventListener("click", showCurrentLocation);
+
+//changing daily weather icon
+let icons = {
+  "01d": "fas fa-sun",
+  "01n": "fas fa-moon",
+  "02d": "fas fa-cloud-sun",
+  "02n": "fas fa-cloud-moon",
+  "03d": "fas fa-cloud",
+  "03n": "fas fa-cloud",
+  "04d": "fas fa-cloud",
+  "04n": "fas fa-cloud",
+  "09d": "fas fa-cloud-showers-heavy",
+  "09n": "fas fa-cloud-showers-heavy",
+  "10d": "fas fa-cloud-sun-rain",
+  "10n": "fas fa-cloud-moon-rain",
+  "11d": "fas fa-bolt",
+  "11n": "fas fa-bolt",
+  "13d": "far fa-snowflake",
+  "13n": "far fa-snowflake",
+  "50d": "fas fa-smog",
+  "50n": "fas fa-smog",
+};
+
+function todaysIcon(icon) {
+  if (icons[icon] !== undefined) {
+    let iconElement = icons[icon];
+    let todaysIcon = document.querySelector("#todays-icon");
+    todaysIcon.setAttribute("class", iconElement);
+  }
+}

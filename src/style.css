@@ -104,8 +104,8 @@ a:hover {
   font-size: 14px;
   line-height: 18px;
 }
-.todays-icon {
-  font-size: 120px;
+#todays-icon {
+  font-size: 110px;
   position: relative;
   top: -13px;
   color: #ffabe1;
