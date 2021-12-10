@@ -128,10 +128,19 @@ a:hover {
   color: #8a8c8e;
 }
 .units {
-  font-size: 18px;
+  font-size: 17px;
   position: relative;
   top: -25px;
   left: -12px;
+}
+.units .active {
+  color: #cc99f9;
+  font-size: 22px;
+}
+.units .active:hover {
+  color: #cc99f9;
+  font-size: 22px;
+  cursor: default;
 }
 .footer-link {
   color: #cc99f9;

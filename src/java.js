@@ -72,17 +72,27 @@ searchCity("New York");
 function convertToFahrenheit(event) {
   event.preventDefault();
   let currentTemp = document.querySelector("#current-temp");
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
   let temperature = currentTemp.innerHTML;
-  currentTemp.innerHTML = Math.round((temperature * 9) / 5 + 32);
+  currentTemp.innerHTML = Math.round((celsiusTemperature * 9) / 5 + 32);
 }
 
+//function convertToCelsius(event) {
+//  event.preventDefault();
+// let currentTemp = document.querySelector("#current-temp");
+//let temperature = currentTemp.innerHTML;
+// currentTemp.innerHTML = Math.round((temperature - 32) / 1.8);
+//}
 function convertToCelsius(event) {
   event.preventDefault();
   let currentTemp = document.querySelector("#current-temp");
+  fahrenheitLink.classList.remove("active");
+  celsiusLink.classList.add("active");
   let temperature = currentTemp.innerHTML;
-  currentTemp.innerHTML = Math.round((temperature - 32) / 1.8);
+  currentTemp.innerHTML = Math.round(celsiusTemperature);
 }
-
+let celsiusTemperature = null;
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", convertToFahrenheit);
 
