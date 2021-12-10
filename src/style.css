@@ -27,6 +27,7 @@ p {
   color: #8a8c8e;
   margin-bottom: 10px;
   font-weight: bold;
+  text-transform: capitalize;
 }
 ul {
   list-style-type: none;
