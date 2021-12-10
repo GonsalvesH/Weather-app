@@ -20,11 +20,19 @@ h1 {
 h2 {
   padding: 10px;
   font-size: 55px;
+  margin-bottom: 0px;
 }
 p {
   font-size: 16px;
   color: #8a8c8e;
-  padding-bottom: 20px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+ul {
+  list-style-type: none;
+  padding-inline-start: 0px;
+  font-size: 14px;
+  color: #8a8c8e;
 }
 hr {
   max-width: 450px;
@@ -89,7 +97,7 @@ a:hover {
 .date {
   font-family: " Josefin Sans", sans-serif;
   color: #8a8c8e;
-  margin-bottom: 30px;
+  margin-bottom: 18px;
   font-size: 14px;
   line-height: 18px;
 }
@@ -117,10 +125,10 @@ a:hover {
   color: #8a8c8e;
 }
 .units {
-  font-size: 22px;
+  font-size: 18px;
   position: relative;
-  top: -20px;
-  left: -15px;
+  top: -25px;
+  left: -18px;
 }
 .footer-link {
   color: #cc99f9;
