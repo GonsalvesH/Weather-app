@@ -110,7 +110,10 @@ a:hover {
   top: -13px;
   color: #ffabe1;
 }
-.weekview {
+.container {
+  max-width: 535px;
+}
+.forecast {
   margin-top: 20px;
   margin-bottom: 20px;
 }

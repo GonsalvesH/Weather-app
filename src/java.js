@@ -68,6 +68,7 @@ function handlesubmit(event) {
 let searchEngine = document.querySelector("#search-engine");
 searchEngine.addEventListener("submit", handlesubmit);
 searchCity("New York");
+
 // celsius/fahrenheit conversion
 function convertToFahrenheit(event) {
   event.preventDefault();
@@ -94,8 +95,6 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", convertToCelsius);
 
 // current location button
-// select button with doc.query selector,
-//add event listener call function
 function searchLocation(position) {
   let apiKey = "5a47f48f2314b1a01e3b9a0e67d393eb";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
@@ -137,3 +136,29 @@ function todaysIcon(icon) {
     todaysIcon.setAttribute("class", iconElement);
   }
 }
+//displaying forecast function
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let days = ["MON", "TUE", "WED", "THU"];
+
+  let forecastHTML = `<div class="row">`;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="col-3">
+              <span class="weekdays">${day}</span>
+              <br />
+              <div class="prediction">
+                <span class="temperature">18°</span>
+                <br />
+                <i class="fas fa-cloud"></i>
+              </div>
+            </div>
+          `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+
+  forecastElement.innerHTML = forecastHTML;
+}
+displayForecast();
