@@ -78,31 +78,6 @@ let searchEngine = document.querySelector("#search-engine");
 searchEngine.addEventListener("submit", handlesubmit);
 searchCity("New York");
 
-// celsius/fahrenheit conversion
-function convertToFahrenheit(event) {
-  event.preventDefault();
-  let currentTemp = document.querySelector("#current-temp");
-  celsiusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
-  let temperature = currentTemp.innerHTML;
-  currentTemp.innerHTML = Math.round((celsiusTemperature * 9) / 5 + 32);
-}
-
-function convertToCelsius(event) {
-  event.preventDefault();
-  let currentTemp = document.querySelector("#current-temp");
-  fahrenheitLink.classList.remove("active");
-  celsiusLink.classList.add("active");
-  let temperature = currentTemp.innerHTML;
-  currentTemp.innerHTML = Math.round(celsiusTemperature);
-}
-let celsiusTemperature = null;
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", convertToFahrenheit);
-
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", convertToCelsius);
-
 // current location button
 function searchLocation(position) {
   let apiKey = "5a47f48f2314b1a01e3b9a0e67d393eb";

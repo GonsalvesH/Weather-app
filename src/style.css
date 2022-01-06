@@ -134,20 +134,13 @@ a:hover {
   color: lightgray;
 }
 .units {
-  font-size: 17px;
   position: relative;
-  top: -25px;
-  left: -12px;
-}
-.units .active {
+  top: -20px;
+  left: -16px;
   color: #cc99f9;
-  font-size: 22px;
+  font-size: 23px;
 }
-.units .active:hover {
-  color: #cc99f9;
-  font-size: 22px;
-  cursor: default;
-}
+
 .footer-link {
   color: #cc99f9;
 }
