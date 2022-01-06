@@ -130,6 +130,9 @@ a:hover {
 .temperature {
   color: #8a8c8e;
 }
+.min-temperature {
+  color: lightgray;
+}
 .units {
   font-size: 17px;
   position: relative;
