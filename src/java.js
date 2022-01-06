@@ -1,3 +1,4 @@
+// formatting the date & time
 function formatDate(date) {
   let days = [
     "Sunday",
